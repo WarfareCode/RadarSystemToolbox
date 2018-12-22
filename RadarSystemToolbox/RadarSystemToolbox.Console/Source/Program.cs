@@ -1,4 +1,4 @@
-﻿using System;
+﻿using static System.Console;
 
 namespace RadarSystemToolbox.Console
 {
@@ -6,7 +6,7 @@ namespace RadarSystemToolbox.Console
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            WriteLine("Hello World!");
         }
     }
 }
