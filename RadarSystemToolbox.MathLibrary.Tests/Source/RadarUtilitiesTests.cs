@@ -18,5 +18,19 @@ namespace RadarSystemToolbox.MathLibrary.Tests
             // Assert:
             Assert.AreEqual(expectedResult, result);
         }
+
+        [TestMethod]
+        public void CalculateOneWayRangeFromTime_WithValidRange()
+        {
+            // Arrange:
+            var time = 1.0e-6;
+            var expectedResult = 150.0;
+
+            // Act:
+            var result = RadarUtilities.CalculateOneWayRangeFromTime(time);
+
+            // Assert:
+            Assert.AreEqual(expectedResult, result);
+        }
     }
 }
