@@ -9,7 +9,7 @@ namespace RadarSystemToolbox.MathLibrary
             double transmitWavelength = transmitFrequency.ToWavelength();
 
             double numerator = transmitterPeakPower * transmitPulseDuration * transmitAntennaGain * receiveAntennaGain * Pow(transmitWavelength, 2.0) * numberOfPulses * targetRadarCrossSection;
-            double denominator = Pow((4 * PI), 3) * Pow(targetRange, 4.0) * systemLosses;
+            double denominator = Pow(4 * PI, 3) * Pow(targetRange, 4.0) * systemLosses;
 
             double signalEnergy = numerator / denominator;
 
