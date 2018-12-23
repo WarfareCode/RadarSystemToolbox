@@ -4,12 +4,12 @@ namespace RadarSystemToolbox.MathLibrary
 {
     public static class RadarRangeEquationUtilities
     {
-        public static double CalculateSignalEnergy(double transmitterPeakPower, double transmitPulseDuration, double transmitAntennaGain, double receiveAntennaGain, double transmitFrequency, double radarCrossSection, double numberOfPulses, double targetRange, double signalLosses)
+        public static double CalculateSignalEnergy(double transmitFrequency, double transmitterPeakPower, double transmitPulseDuration, double transmitAntennaGain, double receiveAntennaGain, double targetRadarCrossSection, double targetRange, double systemLosses, double numberOfPulses)
         {
             var transmitWavelength = transmitFrequency.ToWavelength();
 
-            var numerator = transmitterPeakPower * transmitPulseDuration * transmitAntennaGain * receiveAntennaGain * Pow(transmitWavelength, 2.0) * radarCrossSection * numberOfPulses;
-            var denominator = Pow((4 * PI), 3) * Pow(targetRange, 4.0) * signalLosses;
+            var numerator = transmitterPeakPower * transmitPulseDuration * transmitAntennaGain * receiveAntennaGain * Pow(transmitWavelength, 2.0) * numberOfPulses * targetRadarCrossSection;
+            var denominator = Pow((4 * PI), 3) * Pow(targetRange, 4.0) * systemLosses;
 
             var signalEnergy = numerator / denominator;
 
@@ -25,21 +25,48 @@ namespace RadarSystemToolbox.MathLibrary
             return noiseEnergy;
         }
 
-        public static double CalculateNoiseTemperature(double noiseFactor, double systemReferenceTemperature = PhysicalConstants.SystemReferenceTemperature)
+        public static double CalculateNoiseTemperature(double systemNoiseFactor, double systemReferenceTemperature = PhysicalConstants.SystemReferenceTemperature)
         {
-            var noiseTemperature = systemReferenceTemperature * noiseFactor;
+            var noiseTemperature = systemReferenceTemperature * systemNoiseFactor;
 
             return noiseTemperature;
         }
 
-        public static double CalculateSignalToNoise(double transmitterPeakPower, double transmitPulseDuration, double transmitAntennaGain, double receiveAntennaGain, double transmitFrequency, double radarCrossSection, double numberOfPulses, double targetRange, double signalLosses, double noiseFactor)
+        public static double CalculateSignalToNoiseRatio(double transmitFrequency, double transmitterPeakPower, double transmitPulseDuration, double transmitAntennaGain, double receiveAntennaGain, double targetRadarCrossSection, double targetRange, double systemLosses, double numberOfPulses, double systemNoiseFactor)
         {
-            var signalEnergy = CalculateSignalEnergy(transmitterPeakPower, transmitPulseDuration, transmitAntennaGain, receiveAntennaGain, transmitFrequency, radarCrossSection, numberOfPulses, targetRange, signalLosses);
-            var noiseEnergy = CalculateNoiseEnergy(noiseFactor);
+            var signalEnergy = CalculateSignalEnergy(transmitFrequency, transmitterPeakPower, transmitPulseDuration, transmitAntennaGain, receiveAntennaGain, targetRadarCrossSection, targetRange, systemLosses, numberOfPulses);
+            var noiseEnergy = CalculateNoiseEnergy(systemNoiseFactor);
 
-            var signalToNoise = signalEnergy / noiseEnergy;
+            var signalToNoiseRatio = signalEnergy / noiseEnergy;
 
-            return signalToNoise;
+            return signalToNoiseRatio;
+        }
+
+        public static RadarRangeEquationOutputs CalculateSignalToNoiseRatio(RadarRangeEquationInputs inputs)
+        {
+            var signalEnergy = CalculateSignalEnergy(
+               inputs.TransmitFrequency,
+               inputs.TransmitterPeakPower,
+                inputs.TransmitPulseDuration,
+                inputs.TransmitAntennaGain,
+                inputs.ReceiveAntennaGain,
+                inputs.TargetRadarCrossSection,
+                inputs.TargetRange,
+                inputs.SystemLosses,
+                inputs.NumberOfPulses);
+
+            var noiseEnergy = CalculateNoiseEnergy(inputs.SystemNoiseFactor);
+
+            var signalToNoiseRatio = signalEnergy / noiseEnergy;
+
+            var outputs = new RadarRangeEquationOutputs()
+            {
+                SignalEnergy = signalEnergy,
+                NoiseEnergy = noiseEnergy,
+                SignalToNoiseRatio = signalToNoiseRatio
+            };
+
+            return outputs;
         }
     }
 }
