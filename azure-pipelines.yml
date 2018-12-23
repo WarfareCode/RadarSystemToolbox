@@ -16,7 +16,7 @@ steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'Build'
 
-- script: dotnet test $(System.DefaultWorkingDirectory)/**/*Tests/*.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
+- script: dotnet test $(System.DefaultWorkingDirectory)/**/*Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
   displayName: 'Unit Tests'
 
 - task: PublishCodeCoverageResults@1
