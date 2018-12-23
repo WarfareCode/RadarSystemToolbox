@@ -14,10 +14,13 @@ variables:
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+  displayName: 'Build'
 
-- task: DotNetCoreCLI@2
+- script: dotnet test $(System.DefaultWorkingDirectory)/**/*Tests/*.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
+  displayName: 'Unit Tests'
+
+- task: PublishCodeCoverageResults@1
+  displayName: 'Code  Coverage'
   inputs:
-    command: test
-    projects: '**/*Tests/*.csproj'
-    arguments: '--configuration $(buildConfiguration)'
+    codeCoverageTool: 'cobertura'
+    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/coverage.cobertura.xml'
