@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RadarSystemToolbox.MathLibrary
+﻿namespace RadarSystemToolbox.MathLibrary
 {
     public static class RadarUtilities
     {
