@@ -4,28 +4,28 @@
     {
         public static double CalculateOneWayRangeFromTime(double time)
         {
-            var range = PhysicalConstants.SpeedOfLight * time;
+            double range = PhysicalConstants.SpeedOfLight * time;
 
             return range;
         }
 
         public static double CalculateTwoWayRangeFromTime(double time)
         {
-            var range = PhysicalConstants.SpeedOfLight * time / 2;
+            double range = PhysicalConstants.SpeedOfLight * time / 2;
 
             return range;
         }
 
         public static double CalculateOneWayTimeFromRange(double range)
         {
-            var time = range / PhysicalConstants.SpeedOfLight;
+            double time = range / PhysicalConstants.SpeedOfLight;
 
             return range;
         }
 
         public static double CalculateTwoWayTimeFromRange(double range)
         {
-            var time = 2 * range / PhysicalConstants.SpeedOfLight;
+            double time = 2 * range / PhysicalConstants.SpeedOfLight;
 
             return range;
         }
