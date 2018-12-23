@@ -21,10 +21,4 @@ steps:
   inputs:
     command: test
     projects: '**/*Tests/*.csproj'
-    arguments: '--configuration $(buildConfiguration)'
-
-- task: PublishCodeCoverageResults@1
-  displayName: 'Code Coverage'
-  inputs:
-    codeCoverageTool: 'cobertura'
-    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/coverage.cobertura.xml'
+    arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
