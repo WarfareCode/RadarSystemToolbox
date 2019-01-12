@@ -1,6 +1,7 @@
 ﻿using static System.Math;
+using RadarSystemToolbox.MathLibrary;
 
-namespace RadarSystemToolbox.MathLibrary
+namespace RadarSystemToolbox.DetectionModel
 {
     public static class RadarRangeEquationUtilities
     {
@@ -42,31 +43,31 @@ namespace RadarSystemToolbox.MathLibrary
             return signalToNoiseRatio;
         }
 
-        public static RadarRangeEquationOutputs CalculateSignalToNoiseRatio(RadarRangeEquationInputs inputs)
+        public static RadarRangeEquationOutputData CalculateSignalToNoiseRatio(RadarRangeEquationInputData inputData)
         {
             double signalEnergy = CalculateSignalEnergy(
-                inputs.TransmitFrequency,
-                inputs.TransmitterPeakPower,
-                inputs.TransmitPulseDuration,
-                inputs.TransmitAntennaGain,
-                inputs.ReceiveAntennaGain,
-                inputs.TargetRadarCrossSection,
-                inputs.TargetRange,
-                inputs.SystemLosses,
-                inputs.NumberOfPulses);
+                inputData.TransmitFrequency,
+                inputData.TransmitterPeakPower,
+                inputData.TransmitPulseDuration,
+                inputData.TransmitAntennaGain,
+                inputData.ReceiveAntennaGain,
+                inputData.TargetRadarCrossSection,
+                inputData.TargetRange,
+                inputData.SystemLosses,
+                inputData.NumberOfPulses);
 
-            double noiseEnergy = CalculateNoiseEnergy(inputs.SystemNoiseFactor);
+            double noiseEnergy = CalculateNoiseEnergy(inputData.SystemNoiseFactor);
 
             double signalToNoiseRatio = signalEnergy / noiseEnergy;
 
-            RadarRangeEquationOutputs outputs = new RadarRangeEquationOutputs()
+            RadarRangeEquationOutputData outputData = new RadarRangeEquationOutputData()
             {
                 SignalEnergy = signalEnergy,
                 NoiseEnergy = noiseEnergy,
                 SignalToNoiseRatio = signalToNoiseRatio
             };
 
-            return outputs;
+            return outputData;
         }
     }
 }

@@ -1,6 +1,8 @@
-﻿namespace RadarSystemToolbox.MathLibrary
+﻿using RadarSystemToolbox.MathLibrary;
+
+namespace RadarSystemToolbox.DetectionModel
 {
-    public class RadarRangeEquationOutputs
+    public class RadarRangeEquationOutputData
     {
         public double SignalEnergy { get; set; }
 

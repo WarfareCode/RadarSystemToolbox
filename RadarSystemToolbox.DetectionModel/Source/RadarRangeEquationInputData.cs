@@ -1,6 +1,10 @@
-﻿namespace RadarSystemToolbox.MathLibrary
+﻿using RadarSystemToolbox.MathLibrary;
+using System;
+
+namespace RadarSystemToolbox.DetectionModel
 {
-    public class RadarRangeEquationInputs
+    [Serializable]
+    public class RadarRangeEquationInputData
     {
         public double TransmitFrequency { get; set; }
 

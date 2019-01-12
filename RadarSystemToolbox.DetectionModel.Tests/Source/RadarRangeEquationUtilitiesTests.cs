@@ -1,9 +1,11 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace RadarSystemToolbox.MathLibrary.Tests
+using RadarSystemToolbox.MathLibrary;
+
+namespace RadarSystemToolbox.DetectionModel.Tests
 {
     [TestClass]
-    public class RadarRangeEquationUtilitiesTest
+    public class RadarRangeEquationUtilitiesTests
     {
         [TestMethod]
         public void CalculateCalculateSignalToNoiseRatio_1()
@@ -30,7 +32,7 @@ namespace RadarSystemToolbox.MathLibrary.Tests
         [TestMethod]
         public void CalculateCalculateSignalToNoiseRatio_2()
         {
-            var inputs = new RadarRangeEquationInputs()
+            var inputData = new RadarRangeEquationInputData()
             {
                 TransmitFrequency = 10e9,
                 TransmitterPeakPower = 8000.0,
@@ -45,7 +47,7 @@ namespace RadarSystemToolbox.MathLibrary.Tests
             };
 
             // Act:
-            var outputs = RadarRangeEquationUtilities.CalculateSignalToNoiseRatio(inputs);
+            var outputData = RadarRangeEquationUtilities.CalculateSignalToNoiseRatio(inputData);
 
             // Assert:
             Assert.Inconclusive();
