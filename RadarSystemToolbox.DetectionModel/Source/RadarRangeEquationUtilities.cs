@@ -1,5 +1,5 @@
-﻿using static System.Math;
-using RadarSystemToolbox.MathLibrary;
+﻿using RadarSystemToolbox.MathLibrary;
+using static System.Math;
 
 namespace RadarSystemToolbox.DetectionModel
 {

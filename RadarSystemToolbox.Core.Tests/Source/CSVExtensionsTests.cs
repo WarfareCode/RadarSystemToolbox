@@ -1,8 +1,4 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using RadarSystemToolbox.Core;
-using RadarSystemToolbox.DetectionModel;
-using System.Collections.Generic;
-using System.Numerics;
 
 namespace RadarSystemToolbox.Core.Tests
 {

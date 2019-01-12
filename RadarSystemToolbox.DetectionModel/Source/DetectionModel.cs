@@ -1,8 +1,7 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using RadarSystemToolbox.Core;
+﻿using RadarSystemToolbox.Core;
 using RadarSystemToolbox.MathLibrary;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace RadarSystemToolbox.DetectionModel
 {
