@@ -122,3 +122,13 @@
 /RadarSystemToolbox.Console/obj/Release/netcoreapp2.1/RadarSystemToolbox.Console.AssemblyInfo.cs
 /RadarSystemToolbox.Console/obj/Release/netcoreapp2.1
 /TestResults/3d0bda06-19a0-4738-9b96-bfa96e3e55b7/Brian_DESKTOP-40SOOJ3 2018-12-23 13_44_51.coverage
+/RadarSystemToolbox.Core/bin/Debug/netcoreapp2.1
+/RadarSystemToolbox.Core/obj
+/RadarSystemToolbox.Core.Tests/bin/Debug/netcoreapp2.1
+/RadarSystemToolbox.Core.Tests/obj
+/RadarSystemToolbox.DetectionModel/bin/Debug/netcoreapp2.1
+/RadarSystemToolbox.DetectionModel/obj/Debug/netcoreapp2.1
+/RadarSystemToolbox.DetectionModel.Tests/bin/Debug/netcoreapp2.1
+/RadarSystemToolbox.DetectionModel.Tests/obj/Debug/netcoreapp2.1
+/RadarSystemToolbox.DetectionModel.Tests/obj
+/RadarSystemToolbox.DetectionModel/obj
