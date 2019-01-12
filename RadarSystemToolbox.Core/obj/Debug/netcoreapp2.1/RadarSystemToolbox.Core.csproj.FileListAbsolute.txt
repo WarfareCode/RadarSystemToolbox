@@ -1,9 +1,0 @@
-C:\Users\Brian\source\repos\RadarSystemToolbox\RadarSystemToolbox.Core\bin\Debug\netcoreapp2.1\RadarSystemToolbox.Core.deps.json
-C:\Users\Brian\source\repos\RadarSystemToolbox\RadarSystemToolbox.Core\bin\Debug\netcoreapp2.1\RadarSystemToolbox.Core.dll
-C:\Users\Brian\source\repos\RadarSystemToolbox\RadarSystemToolbox.Core\obj\Debug\netcoreapp2.1\RadarSystemToolbox.Core.csproj.CoreCompileInputs.cache
-C:\Users\Brian\source\repos\RadarSystemToolbox\RadarSystemToolbox.Core\obj\Debug\netcoreapp2.1\RadarSystemToolbox.Core.AssemblyInfoInputs.cache
-C:\Users\Brian\source\repos\RadarSystemToolbox\RadarSystemToolbox.Core\obj\Debug\netcoreapp2.1\RadarSystemToolbox.Core.AssemblyInfo.cs
-C:\Users\Brian\source\repos\RadarSystemToolbox\RadarSystemToolbox.Core\bin\Debug\netcoreapp2.1\RadarSystemToolbox.Core.pdb
-C:\Users\Brian\source\repos\RadarSystemToolbox\RadarSystemToolbox.Core\obj\Debug\netcoreapp2.1\RadarSystemToolbox.Core.dll
-C:\Users\Brian\source\repos\RadarSystemToolbox\RadarSystemToolbox.Core\obj\Debug\netcoreapp2.1\RadarSystemToolbox.Core.pdb
-C:\Users\Brian\source\repos\RadarSystemToolbox\RadarSystemToolbox.Core\obj\Debug\netcoreapp2.1\RadarSystemToolbox.Core.csprojAssemblyReference.cache
